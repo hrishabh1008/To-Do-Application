@@ -20,15 +20,22 @@ const ToDoItem = (props) => {
       />
       <p
         ref={isCompleteRef}
-        className="text-gray-800 text-lg font-medium transition-all duration-200"
-      >
+        className="text-gray-800 text-lg font-medium transition-all duration-200">
         {props.item}
       </p>
       <div className="space-x-2">
-        <button className="px-3 py-1 bg-yellow-200 text-yellow-700 rounded-lg hover:bg-yellow-300 hover:text-yellow-800 transition duration-200">
+        <button
+          id="editBtn"
+          className="px-3 py-1 bg-yellow-200 text-yellow-700 rounded-lg hover:bg-yellow-300 hover:text-yellow-800 transition duration-200"
+          onClick={() => {
+            props.handleEdit(props.index);
+          }}>
           Edit
         </button>
-        <button className="px-3 py-1 bg-red-200 text-red-700 rounded-lg hover:bg-red-300 hover:text-red-800 transition duration-200">
+        <button
+          id="deleteBtn"
+          className="px-3 py-1 bg-red-200 text-red-700 rounded-lg hover:bg-red-300 hover:text-red-800 transition duration-200"
+          onClick={() => props.handleDelete(props.index)}>
           Delete
         </button>
       </div>
